@@ -58,6 +58,7 @@ button {
 #btn1:hover {
   background-color: rgb(201, 41, 41);
   font-size: 19px;
+  cursor: pointer;
 }
 
 #btn2 {
@@ -72,4 +73,5 @@ button {
 #btn2:hover {
   background-color: rgb(37, 37, 37);
   font-size: 19px;
+  cursor: pointer;
 }
