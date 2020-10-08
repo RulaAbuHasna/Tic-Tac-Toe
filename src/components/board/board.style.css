@@ -75,3 +75,21 @@ button {
   font-size: 19px;
   cursor: pointer;
 }
+
+@media only screen and (min-width: 300px) and (max-width: 800px) {
+  #results input {
+    width: 40px;
+    height: 20px;
+    padding: 0px;
+  }
+
+  #board {
+    width: 300px;
+  }
+  button {
+    margin: 0px;
+  }
+  #btn1 {
+    margin-top: 30px;
+  }
+}

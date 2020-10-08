@@ -18,8 +18,8 @@ class Board extends React.Component {
       cell9: '',
       score1: 0,
       score2: 0,
-      player1: 'put your name here',
-      player2: 'put your name here',
+      player1: 'name1',
+      player2: 'name2',
       style: '',
     };
     this.handleChange = this.handleChange.bind(this);
