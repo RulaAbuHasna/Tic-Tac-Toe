@@ -2,9 +2,10 @@
   margin: 0 auto;
   margin-top: 20px;
   text-align: center;
-  background-color: grey;
+  background-color: maroon;
   width: 300px;
   border-radius: 8px;
+  color: white;
 }
 #results td {
   width: 100px;
@@ -14,10 +15,9 @@
   margin: 0 auto;
   margin-top: 60px;
   text-align: center;
-  background-color: grey;
-  /* border: 2px black solid; */
   width: 500px;
   border-radius: 8px;
+  cursor: pointer;
 }
 
 #board td {
@@ -41,10 +41,13 @@ button {
   margin-top: 60px;
 }
 #results input {
-  background-color: grey;
+  background-color: maroon;
   border: none;
   text-align: center;
   font-size: 15px;
+  outline: none;
+  color: white;
+  cursor: pointer;
 }
 
 #btn1 {

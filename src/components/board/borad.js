@@ -18,14 +18,15 @@ class Board extends React.Component {
       cell9: '',
       score1: 0,
       score2: 0,
-      player1: 'name1',
-      player2: 'name2',
+      player1: 'Player1',
+      player2: 'Player2',
       style: '',
     };
     this.handleChange = this.handleChange.bind(this);
     this.submitClick = this.submitClick.bind(this);
     this.reset = this.reset.bind(this);
     this.playAgain = this.playAgain.bind(this);
+    this.handleClick = this.handleClick.bind(this)
 
     this.player1Won = () => {
       this.setState({ style: 'none' });
@@ -48,8 +49,15 @@ class Board extends React.Component {
   }
   //handle chnaging the name of the playes
   handleChange = (e) => {
-    this.setState({ [e.target.name]: e.target.value });
+    this.setState({ [e.target.name]: e.target.value })
   };
+
+  //handle intialize 
+  handleClick = (e) => {
+    if (e.target.value === "Player1" || e.target.value === "Player2") {
+      this.setState({ [e.target.name]: "" })
+    }
+  }
   //check if the board is filled to deteremine the results
   componentDidUpdate = (previousProps, previousState) => {
     var cell1 = this.state.cell1;
@@ -73,9 +81,11 @@ class Board extends React.Component {
         if (cell1 === 'X') {
           this.setState({ score1: previousState.score1 + 1 });
           this.player1Won();
+          this.playAgain()
         } else if (cell1 === 'O') {
           this.setState({ score2: previousState.score2 + 1 });
-          this.player2Won();
+          this.player1Won();
+          this.playAgain()
         }
         // this.playAgain();
       }
@@ -84,9 +94,11 @@ class Board extends React.Component {
         if (cell4 === 'X') {
           this.setState({ score1: previousState.score1 + 1 });
           this.player1Won();
+          this.playAgain()
         } else if (cell4 === 'O') {
           this.setState({ score2: previousState.score2 + 1 });
-          this.player2Won();
+          this.player1Won();
+          this.playAgain()
         }
       }
 
@@ -95,9 +107,11 @@ class Board extends React.Component {
         if (cell7 === 'X') {
           this.setState({ score1: previousState.score1 + 1 });
           this.player1Won();
+          this.playAgain()
         } else if (cell7 === 'O') {
           this.setState({ score2: previousState.score2 + 1 });
-          this.player2Won();
+          this.player1Won();
+          this.playAgain()
         }
       }
 
@@ -106,9 +120,11 @@ class Board extends React.Component {
         if (cell1 === 'X') {
           this.setState({ score1: previousState.score1 + 1 });
           this.player1Won();
+          this.playAgain()
         } else if (cell1 === 'O') {
           this.setState({ score2: previousState.score2 + 1 });
-          this.player2Won();
+          this.player1Won();
+          this.playAgain()
         }
       }
 
@@ -117,9 +133,11 @@ class Board extends React.Component {
         if (cell2 === 'X') {
           this.setState({ score1: previousState.score1 + 1 });
           this.player1Won();
+          this.playAgain()
         } else if (cell2 === 'O') {
           this.setState({ score2: previousState.score2 + 1 });
-          this.player2Won();
+          this.player1Won();
+          this.playAgain()
         }
       }
       //third col
@@ -127,9 +145,11 @@ class Board extends React.Component {
         if (cell3 === 'X') {
           this.setState({ score1: previousState.score1 + 1 });
           this.player1Won();
+          this.playAgain()
         } else if (cell3 === 'O') {
           this.setState({ score2: previousState.score2 + 1 });
-          this.player2Won();
+          this.player1Won();
+          this.playAgain()
         }
       }
       //first diagonal
@@ -137,9 +157,11 @@ class Board extends React.Component {
         if (cell1 === 'X') {
           this.setState({ score1: previousState.score1 + 1 });
           this.player1Won();
+          this.playAgain()
         } else if (cell1 === 'O') {
           this.setState({ score2: previousState.score2 + 1 });
-          this.player2Won();
+          this.player1Won();
+          this.playAgain()
         }
       }
       //second diagonal
@@ -147,9 +169,11 @@ class Board extends React.Component {
         if (cell3 === 'X') {
           this.setState({ score1: previousState.score1 + 1 });
           this.player1Won();
+          this.playAgain()
         } else if (cell3 === 'O') {
           this.setState({ score2: previousState.score2 + 1 });
-          this.player2Won();
+          this.player1Won();
+          this.playAgain()
         }
       }
     }
@@ -214,6 +238,7 @@ class Board extends React.Component {
                   name='player1'
                   value={this.state.player1}
                   onChange={this.handleChange}
+                  onClick={this.handleClick}
                 />
               </td>
               <td className='bottom'>
@@ -222,6 +247,7 @@ class Board extends React.Component {
                   name='player2'
                   value={this.state.player2}
                   onChange={this.handleChange}
+                  onClick={this.handleClick}
                 />
               </td>
             </tr>
